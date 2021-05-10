@@ -95,9 +95,7 @@ function returnModuleProperties(){
 // echo '</code></pre>';
     
 // die();
-
 FLBuilder::register_module( 'AllInOneFlexModule', returnModuleProperties());
-
 
 
 ?>
