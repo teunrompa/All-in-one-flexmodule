@@ -6,6 +6,3 @@
 <div class="fl-example-text">
         <span class="flex-content"><?php $module->returnFlexContent(); ?></span>
 </div>
-
-
-

@@ -21,12 +21,7 @@ $test = 'all';
 // include './includes/menu.php';
 add_action( 'init', 'my_load_module_examples' );
 
-
-
-
 require_once 'inc/settings/settings.php';
-
-
 
 add_action('acf/init','return_location_settings');
 ?>

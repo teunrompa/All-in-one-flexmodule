@@ -64,10 +64,7 @@ class AllInOneFlexModule extends FLBuilderModule {
     }
 
 }
-//VOORBEELD PROBLEEM MET FLEXIBELE OPLOSSING 
-// function test(){
-//     array(array(),array()) <-- 
-// }
+
 
 function returnModuleProperties(){
     $moduleProperties = array(0);
@@ -81,20 +78,11 @@ function returnModuleProperties(){
     array_push($moduleProperties, $image_section);
     array_push($moduleProperties, $quote_section);
     array_push($moduleProperties, $slideshow_section);
-    // echo '<pre>';
-    // var_dump($moduleProperties);
-    // echo '</pre>';
+
     return $moduleProperties[0] + $moduleProperties[1] + $moduleProperties[2] + $moduleProperties[3];
-    // return $moduleProperties[1];
+  
 }
-// echo '<pre><code>';
-// var_dump(returnModuleProperties());
-// echo '</code></pre>';
-// echo '<pre><code>';
-// var_dump($moduleProperties);
-// echo '</code></pre>';
-    
-// die();
+
 FLBuilder::register_module( 'AllInOneFlexModule', returnModuleProperties());
 
 

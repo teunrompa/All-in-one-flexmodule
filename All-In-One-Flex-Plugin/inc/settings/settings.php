@@ -75,11 +75,6 @@ function flex_settings_init(){
     register_setting(
         'flex-settings-page',
         'flex_settings_checkbox_field'
-        // array(
-        //     'type' => 'array',
-        //     'sanitize_callback' => 'sanitize_check_box', // not a function yet
-        //     'default' => ''
-        // )
     );
     //add select field
     add_settings_field(
@@ -155,7 +150,6 @@ function return_location_settings(){
                 'operator' => '==',
                 'value' => $location, // this is the instance of the location
             ));
-    
 
             array_push  ($locationSettings, $locationArray);
         }
@@ -382,30 +376,5 @@ function return_location_settings(){
         'acfe_note' => '',
     ));
 }
-
-
-
-function return_location_group_settings(){
-    $location =  array(
-
-        array(
-                array(
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'cases', // HIER MOET FUNCTIE KOMEN
-                ),
-                array(
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'team', // HIER MOET FUNCTIE KOMEN
-                )
-            ),
-        );
-    
- 
-    return $location;
-}
-
-
 
 ?>
