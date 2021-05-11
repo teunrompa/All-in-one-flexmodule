@@ -51,26 +51,6 @@ function flex_settings_init(){
         'flex-settings-page'
     );
 
-    //Register text field
-    register_setting(
-        'flex-settings-page',
-        'flex_settings_input_field',
-        array(
-            'type' => 'string',
-            'sanitize_callback' => 'sanitize_text_field',
-            'default' => ''
-        )
-    );
-
-    //add settings field
-    add_settings_field(
-        'flex_settings_input_field',
-        __('Input Field' , 'flex-plugin'),
-        'flex_settings_input_field_callback',
-        'flex-settings-page',
-        'flex_settings_section'
-    );
-
     //Register select field
     register_setting(
         'flex-settings-page',
@@ -125,13 +105,19 @@ function flex_settings_checkbox_field_callback(){
     $i = 0;
 
     $flex_checkbox_field = get_option('flex_settings_checkbox_field');
-
+    ?>
+    
+    <div>
+        <h3>Check the post type where you want the flexcontent to show</h3>
+    </div>
+    
+    <?php
     foreach ( $post_types  as $post_type ) {
         $post_name = $post_type->name;
         ?>
         <div>
         <input type='checkbox' id=<?= $post_name ?> name='flex_settings_checkbox_field[<?= $post_name ?>]' value='<?= $post_name ?>' <?php checked( isset( $flex_checkbox_field[$post_name] ) ); ?>>
-        <label for=<?= $post_name ?>>Custom Post Type name:  <?= $post_name ?>  
+        <label for=<?= $post_name ?>>Post type name:  <?= $post_name ?>  
         </div>
         <?php
     }
