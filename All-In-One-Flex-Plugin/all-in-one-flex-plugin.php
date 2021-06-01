@@ -17,7 +17,7 @@ if ( class_exists( 'FLBuilder' ) ) {
             require_once 'all-in-one-flex-module/all-in-one-flex-module.php';
     }
 }
-$test = 'all';
+
 // include './includes/menu.php';
 add_action( 'init', 'my_load_module_examples' );
 

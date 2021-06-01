@@ -31,7 +31,7 @@ function flex_settings_template_callback(){
 
                 // save settings button
 
-                submit_button('Save Settings')
+                submit_button('Save Settings');
             ?>
         </form>
     </div>
@@ -102,8 +102,7 @@ function flex_settings_checkbox_field_callback(){
     $output = 'objects'; // names or objects, note names is the default
     $operator = 'and'; // 'and' or 'or'
     $post_types = get_post_types( $args, $output, $operator ); 
-    $i = 0;
-
+    
     $flex_checkbox_field = get_option('flex_settings_checkbox_field');
     ?>
     
@@ -140,15 +139,15 @@ function return_location_settings(){
             array_push  ($locationSettings, $locationArray);
         }
     }
-
+     
     acf_add_local_field_group(array(
-        'key' => 'group_5bd180b0438cb',
-        'title' => 'Flexibele Content',
+        'key' => 'group_6090feea09e0e',
+        'title' => 'flexcontent',
         'fields' => array(
             array(
-                'key' => 'field_60742b70143cb',
-                'label' => 'Flexibele Content',
-                'name' => 'flexibele_content',
+                'key' => 'field_60a3ce4cb0ce2',
+                'label' => 'flexcontent',
+                'name' => 'flexcontent',
                 'type' => 'flexible_content',
                 'instructions' => '',
                 'required' => 0,
@@ -160,15 +159,15 @@ function return_location_settings(){
                 ),
                 'acfe_flexible_advanced' => 0,
                 'layouts' => array(
-                    'layout_60742b7860cec' => array(
-                        'key' => 'layout_60742b7860cec',
+                    'layout_60a3ce5b7f064' => array(
+                        'key' => 'layout_60a3ce5b7f064',
                         'name' => 'text_editor',
-                        'label' => 'Text ',
+                        'label' => 'text editor',
                         'display' => 'block',
                         'sub_fields' => array(
                             array(
-                                'key' => 'field_60742c8a8ce69',
-                                'label' => 'Content',
+                                'key' => 'field_60a3ce5eb0ce3',
+                                'label' => 'content',
                                 'name' => 'content',
                                 'type' => 'wysiwyg',
                                 'instructions' => '',
@@ -197,17 +196,17 @@ function return_location_settings(){
                         'acfe_flexible_modal_edit_size' => false,
                         'acfe_flexible_category' => false,
                     ),
-                    'layout_60745ff62b636' => array(
-                        'key' => 'layout_60745ff62b636',
-                        'name' => 'afbeelding',
-                        'label' => 'Afbeelding',
+                    'layout_60a3ced0b0ce5' => array(
+                        'key' => 'layout_60a3ced0b0ce5',
+                        'name' => 'image',
+                        'label' => 'image',
                         'display' => 'block',
                         'sub_fields' => array(
                             array(
-                                'key' => 'field_607548882b637',
-                                'label' => 'Content',
+                                'key' => 'field_60a3cee8b0ce6',
+                                'label' => 'content',
                                 'name' => 'content',
-                                'type' => 'url',
+                                'type' => 'image',
                                 'instructions' => '',
                                 'required' => 0,
                                 'conditional_logic' => 0,
@@ -216,8 +215,18 @@ function return_location_settings(){
                                     'class' => '',
                                     'id' => '',
                                 ),
-                                'default_value' => '',
-                                'placeholder' => '',
+                                'uploader' => '',
+                                'acfe_thumbnail' => 0,
+                                'return_format' => 'array',
+                                'preview_size' => 'medium',
+                                'min_width' => '',
+                                'min_height' => '',
+                                'min_size' => '',
+                                'max_width' => '',
+                                'max_height' => '',
+                                'max_size' => '',
+                                'mime_types' => '',
+                                'library' => 'all',
                             ),
                         ),
                         'min' => '',
@@ -231,15 +240,15 @@ function return_location_settings(){
                         'acfe_flexible_modal_edit_size' => false,
                         'acfe_flexible_category' => false,
                     ),
-                    'layout_607548972b638' => array(
-                        'key' => 'layout_607548972b638',
+                    'layout_60a3cf14b0ce7' => array(
+                        'key' => 'layout_60a3cf14b0ce7',
                         'name' => 'quote',
-                        'label' => 'Quote',
+                        'label' => 'quote',
                         'display' => 'block',
                         'sub_fields' => array(
                             array(
-                                'key' => 'field_607548d32b639',
-                                'label' => 'Content',
+                                'key' => 'field_60a3cf2fb0ce8',
+                                'label' => 'content',
                                 'name' => 'content',
                                 'type' => 'text',
                                 'instructions' => '',
@@ -268,15 +277,15 @@ function return_location_settings(){
                         'acfe_flexible_modal_edit_size' => false,
                         'acfe_flexible_category' => false,
                     ),
-                    'layout_60812cbc803db' => array(
-                        'key' => 'layout_60812cbc803db',
+                    'layout_60a3d0bbb0ce9' => array(
+                        'key' => 'layout_60a3d0bbb0ce9',
                         'name' => 'gallery',
-                        'label' => 'Gallery',
+                        'label' => 'gallery',
                         'display' => 'block',
                         'sub_fields' => array(
                             array(
-                                'key' => 'field_60812ce2803dc',
-                                'label' => 'Content',
+                                'key' => 'field_60a3d0d6b0cea',
+                                'label' => 'content',
                                 'name' => 'content',
                                 'type' => 'gallery',
                                 'instructions' => '',
@@ -300,6 +309,256 @@ function return_location_settings(){
                                 'max_height' => '',
                                 'max_size' => '',
                                 'mime_types' => '',
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                        'acfe_flexible_render_template' => false,
+                        'acfe_flexible_render_style' => false,
+                        'acfe_flexible_render_script' => false,
+                        'acfe_flexible_thumbnail' => false,
+                        'acfe_flexible_settings' => false,
+                        'acfe_flexible_settings_size' => 'medium',
+                        'acfe_flexible_modal_edit_size' => false,
+                        'acfe_flexible_category' => false,
+                    ),
+                    'layout_60a3d0e4b0ceb' => array(
+                        'key' => 'layout_60a3d0e4b0ceb',
+                        'name' => 'button',
+                        'label' => 'button',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_60a3d0fcb0cec',
+                                'label' => 'content',
+                                'name' => 'content',
+                                'type' => 'text',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'placeholder' => '',
+                                'prepend' => '',
+                                'append' => '',
+                                'maxlength' => '',
+                            ),
+                            array(
+                                'key' => 'field_60a3d106b0ced',
+                                'label' => 'url',
+                                'name' => 'url',
+                                'type' => 'url',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'placeholder' => '',
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                        'acfe_flexible_render_template' => false,
+                        'acfe_flexible_render_style' => false,
+                        'acfe_flexible_render_script' => false,
+                        'acfe_flexible_thumbnail' => false,
+                        'acfe_flexible_settings' => false,
+                        'acfe_flexible_settings_size' => 'medium',
+                        'acfe_flexible_modal_edit_size' => false,
+                        'acfe_flexible_category' => false,
+                    ),
+                    'layout_60a3d111b0cee' => array(
+                        'key' => 'layout_60a3d111b0cee',
+                        'name' => 'oembed',
+                        'label' => 'oEmbed',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_60a3d13eb0cef',
+                                'label' => 'content',
+                                'name' => 'content',
+                                'type' => 'oembed',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'width' => '',
+                                'height' => '',
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                        'acfe_flexible_render_template' => false,
+                        'acfe_flexible_render_style' => false,
+                        'acfe_flexible_render_script' => false,
+                        'acfe_flexible_thumbnail' => false,
+                        'acfe_flexible_settings' => false,
+                        'acfe_flexible_settings_size' => 'medium',
+                        'acfe_flexible_modal_edit_size' => false,
+                        'acfe_flexible_category' => false,
+                    ),
+                    'layout_60a3d172b0cf1' => array(
+                        'key' => 'layout_60a3d172b0cf1',
+                        'name' => 'two_text_column',
+                        'label' => 'two text column',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_60a3d17eb0cf2',
+                                'label' => 'column 1',
+                                'name' => 'content_1',
+                                'type' => 'wysiwyg',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'tabs' => 'all',
+                                'toolbar' => 'full',
+                                'media_upload' => 1,
+                                'delay' => 0,
+                            ),
+                            array(
+                                'key' => 'field_60a3d189b0cf3',
+                                'label' => 'column 2',
+                                'name' => 'content_2',
+                                'type' => 'wysiwyg',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'tabs' => 'all',
+                                'toolbar' => 'full',
+                                'media_upload' => 1,
+                                'delay' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                        'acfe_flexible_render_template' => false,
+                        'acfe_flexible_render_style' => false,
+                        'acfe_flexible_render_script' => false,
+                        'acfe_flexible_thumbnail' => false,
+                        'acfe_flexible_settings' => false,
+                        'acfe_flexible_settings_size' => 'medium',
+                        'acfe_flexible_modal_edit_size' => false,
+                        'acfe_flexible_category' => false,
+                    ),
+                    'layout_60a3d297aa958' => array(
+                        'key' => 'layout_60a3d297aa958',
+                        'name' => 'empty',
+                        'label' => 'empty',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_60a3d47af2601',
+                                'label' => 'space',
+                                'name' => '',
+                                'type' => 'message',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'message' => 'this gives margin between your elements',
+                                'new_lines' => 'wpautop',
+                                'esc_html' => 0,
+                            ),
+                        ),
+                        'min' => '',
+                        'max' => '',
+                        'acfe_flexible_render_template' => false,
+                        'acfe_flexible_render_style' => false,
+                        'acfe_flexible_render_script' => false,
+                        'acfe_flexible_thumbnail' => false,
+                        'acfe_flexible_settings' => false,
+                        'acfe_flexible_settings_size' => 'medium',
+                        'acfe_flexible_modal_edit_size' => false,
+                        'acfe_flexible_category' => false,
+                    ),
+                    'layout_60a3d4b9f2602' => array(
+                        'key' => 'layout_60a3d4b9f2602',
+                        'name' => 'cta',
+                        'label' => 'CTA',
+                        'display' => 'block',
+                        'sub_fields' => array(
+                            array(
+                                'key' => 'field_60a3d501f2603',
+                                'label' => 'text',
+                                'name' => 'text',
+                                'type' => 'wysiwyg',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'tabs' => 'all',
+                                'toolbar' => 'full',
+                                'media_upload' => 1,
+                                'delay' => 0,
+                            ),
+                            array(
+                                'key' => 'field_60af9a2e4c9b9',
+                                'label' => 'Button text',
+                                'name' => 'button_text',
+                                'type' => 'text',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'placeholder' => '',
+                                'prepend' => '',
+                                'append' => '',
+                                'maxlength' => '',
+                            ),
+                            array(
+                                'key' => 'field_60af9a404c9ba',
+                                'label' => 'Button url',
+                                'name' => 'button_url',
+                                'type' => 'url',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'placeholder' => '',
                             ),
                         ),
                         'min' => '',
@@ -345,10 +604,9 @@ function return_location_settings(){
                 ),
             ),
         ),
-        'location' => $locationSettings
-        ,
+        'location' => $locationSettings,
         'menu_order' => 0,
-        'position' => 'acf_after_title',
+        'position' => 'normal',
         'style' => 'default',
         'label_placement' => 'left',
         'instruction_placement' => 'label',
@@ -361,6 +619,8 @@ function return_location_settings(){
         'acfe_meta' => '',
         'acfe_note' => '',
     ));
+    
+    
 }
 
 ?>
