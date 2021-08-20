@@ -29,7 +29,7 @@ class AllInOneFlexModule extends FLBuilderModule {
                     $text = get_sub_field('content');
 
                     ?>
-                        <div class='flex-text-editor' id='text-<?=$instance?>'><?=$text;?></div>;
+                        <div class='flex-text-editor' id='text-<?=$instance?>'><?=$text;?></div>
                     <?php
                 elseif( get_row_layout() == 'image' ): 
                     $image = get_sub_field('content');
@@ -43,13 +43,13 @@ class AllInOneFlexModule extends FLBuilderModule {
                     
                     $qoute = get_sub_field('content');
                     ?>
-                    <div class='flex-quote' id='qoute-<?=$instance?>'><p><?=$qoute?></p></div>;
+                    <div class='flex-quote' id='qoute-<?=$instance?>'><p><?=$qoute?></p></div>
                     <?php
                 elseif(get_row_layout() == 'gallery'):
                     $images = get_sub_field('content');
                     ?>
                     <!-- <div class="prev"></div> -->
-                    <div class='flex-carousel-image-container' id='<?=$instance?>'>;
+                    <div class='flex-carousel-image-container' id='<?=$instance?>'>
                     <!-- <div class="next"></div> -->
                     <?php
                     foreach($images as $image){
