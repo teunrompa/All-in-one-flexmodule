@@ -97,7 +97,7 @@ function flex_settings_checkbox_field_callback(){
     
     $args = array(
         'public'   => true,
-        '_builtin' => false
+        '_builtin' => true
     );
     $output = 'objects'; // names or objects, note names is the default
     $operator = 'and'; // 'and' or 'or'
