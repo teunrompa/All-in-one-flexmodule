@@ -103,9 +103,8 @@ function flex_settings_checkbox_field_callback(){
     $operator = 'and'; // 'and' or 'or'
     $post_types = get_post_types( $args, $output, $operator ); 
     
-    $flex_checkbox_field = get_option('flex_settings_checkbox_field');
     
-    
+  
     //Test
     $args = array(
         'public' => false,
@@ -113,6 +112,8 @@ function flex_settings_checkbox_field_callback(){
     );
     
     $built_in_post_types = get_post_types( $args, $output, $operator );
+    
+    $flex_checkbox_field = get_option('flex_settings_checkbox_field');
     ?>
     
     <div>
