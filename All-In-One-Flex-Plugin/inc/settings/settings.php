@@ -120,30 +120,6 @@ function flex_settings_checkbox_field_callback(){
         </div>
         <?php
     }
-    
-    //Test
-    $args = array(
-        'public' => false,
-        '_builtin'=> true,
-    );
-    $output = 'objects';
-    $operator = 'and';
-    
-    $built_in_post_types = get_post_types( $args, $output, $operator );
-    
-    $flex_checkbox_field = get_option('flex_settings_checkbox_field');
-    //Test
-    foreach ($built_in_post_types as $post_type){
-        $post_name = $post_type->name;
-        ?>
-        <div>
-        <input type='checkbox' id=<?= $post_name ?> name='flex_settings_checkbox_field[<?= $post_name ?>]' value='<?= $post_name ?>' <?php checked( isset( $flex_checkbox_field[$post_name] ) ); ?>>
-        <label for=<?= $post_name ?>>Post type name:  <?= $post_name ?>  
-        </div>
-        <?php
-    }
-
-
 }
 //this setting uses all the items in flex_checkbox_field and returns them
 function return_location_settings(){
