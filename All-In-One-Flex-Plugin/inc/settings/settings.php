@@ -103,16 +103,6 @@ function flex_settings_checkbox_field_callback(){
     $operator = 'and'; // 'and' or 'or'
     $post_types = get_post_types( $args, $output, $operator ); 
     
-    
-  
-    //Test
-    $args = array(
-        'public' => false,
-        '_builtin'=> true,
-    );
-    
-    $built_in_post_types = get_post_types( $args, $output, $operator );
-    
     $flex_checkbox_field = get_option('flex_settings_checkbox_field');
     ?>
     
@@ -130,6 +120,18 @@ function flex_settings_checkbox_field_callback(){
         </div>
         <?php
     }
+    
+    //Test
+    $args = array(
+        'public' => false,
+        '_builtin'=> true,
+    );
+    $output = 'objects';
+    $operator = 'and';
+    
+    $built_in_post_types = get_post_types( $args, $output, $operator );
+    
+    $flex_checkbox_field = get_option('flex_settings_checkbox_field');
     //Test
     foreach ($built_in_post_types as $post_type){
         $post_name = $post_type->name;
