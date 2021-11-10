@@ -97,13 +97,22 @@ function flex_settings_checkbox_field_callback(){
     
     $args = array(
         'public'   => true,
-        '_builtin' => true
+        '_builtin' => false
     );
     $output = 'objects'; // names or objects, note names is the default
     $operator = 'and'; // 'and' or 'or'
     $post_types = get_post_types( $args, $output, $operator ); 
     
     $flex_checkbox_field = get_option('flex_settings_checkbox_field');
+    
+    
+    //Test
+    $args = array(
+        'public' => false,
+        '_builtin'=> true,
+    );
+    
+    $built_in_post_types = get_post_types( $args, $output, $operator );
     ?>
     
     <div>
@@ -112,6 +121,16 @@ function flex_settings_checkbox_field_callback(){
     
     <?php
     foreach ( $post_types  as $post_type ) {
+        $post_name = $post_type->name;
+        ?>
+        <div>
+        <input type='checkbox' id=<?= $post_name ?> name='flex_settings_checkbox_field[<?= $post_name ?>]' value='<?= $post_name ?>' <?php checked( isset( $flex_checkbox_field[$post_name] ) ); ?>>
+        <label for=<?= $post_name ?>>Post type name:  <?= $post_name ?>  
+        </div>
+        <?php
+    }
+    //Test
+    foreach ($built_in_post_types as $post_type){
         $post_name = $post_type->name;
         ?>
         <div>
